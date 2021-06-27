@@ -1,0 +1,96 @@
+body {
+    font-family: "Trebuchet MS", arial, sans-serif;
+}
+
+#header {
+    background-color: #dde;
+    border-top: 3px solid #36c;
+    height: 10%;
+    overflow: hidden;
+}
+
+a {
+    color: blue;
+}
+
+#header h1 a {
+    text-decoration: none;
+    color: black;
+}
+
+#header ul {
+    list-style: none;
+    float: right;
+    vertical-align: middle;
+}
+
+#header li {
+    font-size: 14px;
+    display: inline;
+}
+
+#header h1 {
+    font-size: 20px;
+    float: left;
+    vertical-align: middle;
+}
+
+a.selected {
+    color: black;
+    text-decoration: none;
+}
+
+table{
+  width: 100%;
+  border-collapse:separate;
+  border-spacing: 0;
+}
+
+table th:first-child{
+  border-radius: 5px 0 0 0;
+}
+
+table th:last-child{
+  border-radius: 0 5px 0 0;
+  border-right: 1px solid #3c6690;
+}
+
+table th{
+  text-align: center;
+  color:white;
+  background: linear-gradient(#829ebc,#225588);
+  border-left: 1px solid #3c6690;
+  border-top: 1px solid #3c6690;
+  border-bottom: 1px solid #3c6690;
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+  padding: 10px 0;
+}
+
+.id {
+  width: 50px;
+}
+
+.date {
+  width: 150px;
+}
+
+table td{
+  text-align: center;
+  border-left: 1px solid #a8b7c5;
+  border-bottom: 1px solid #a8b7c5;
+  border-top:none;
+  box-shadow: 0px -3px 5px 1px #eee inset;
+  padding: 10px 0;
+}
+
+table td:last-child{
+  border-right: 1px solid #a8b7c5;
+}
+
+table tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+table tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
