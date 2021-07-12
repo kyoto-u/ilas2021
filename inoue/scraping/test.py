@@ -1,6 +1,8 @@
+# coding: utf-8
 import numpy as np
 import requests
 from bs4 import BeautifulSoup
+import codecs
 import io
 import re
 
@@ -26,6 +28,7 @@ for i in range(len(links)):
     url = links[i]
     res = requests.get(url)
     print('looking ' + url + ' ...')
+    text = ''
     soup = BeautifulSoup(res.text, 'html.parser')
     elems = soup.find_all(href=re.compile("detail.php"))
     for j in range(len(elems)):
@@ -62,6 +65,13 @@ for i in range(len(links)):
                 cur_lis = re.findall(r"[-+]?\d*\.\d+|\d+",scspl[k])
                 if len(cur_lis)>=1:
                     cur_dat.append(float(cur_lis[0]))
-        print(cur_dat)
+        # print(cur_dat)
+        text = text + ' '.join(str(cur_dat))
+        text = text + '\n'
+    # print(text)
+    # f = codecs.open(str(i)+'.txt', 'w', encoding='shift_jis')
+    f = codecs.open(str(i)+'.txt', 'w', encoding='utf-8')
+    f.write(text)
+    f.close()
 
 # print(res.text)
