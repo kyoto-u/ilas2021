@@ -152,7 +152,7 @@ else:
     if way_of_sort != 0 and way_of_sort != 1:
         print("エラー：0か1を入力してください。")
         sys.exit()
-    elif way_of_sort == '1':
+    elif way_of_sort == 1:
         ans = sorted(ans, key=lambda x: x[-1])
     else:
         ans = sorted(ans, reverse=True, key=lambda x: x[-1])
