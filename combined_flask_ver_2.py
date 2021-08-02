@@ -80,11 +80,11 @@ m_links = [[]for i in range(len(elems))]
 try:
     i = int(input('どの食堂か数字を入力してください。0:中央 1:吉田 2:北部 3:南部 4:ルネ '))
 except ValueError:
-    print('エラー：1から5の数字を入力してください。')
+    print('エラー：0から4の数字を入力してください。')
     sys.exit()
 
 if i < 0 or i > 4:
-    print('エラー：1から5の数字を入力してください。')
+    print('エラー：0から4の数字を入力してください。')
     sys.exit()
 
 else:
@@ -153,6 +153,7 @@ else:
         # text = text + ' '.join(str(cur_dat))
         # text = text + '\n'
 
+    # 米の複数サイズ対応(データ埋め込みなので、データベース的には不完全)
     name.append('ライスSS(Boiled rice SS)')
     price.append(73)
     red.append(0)
@@ -194,7 +195,7 @@ else:
     try:
         way_of_sort = int(input('金額の昇順で表示する場合は1、降順の場合は0を入力してください。 '))
     except ValueError:
-        print('エラー：1から5の数字を入力してください。')
+        print('エラー：0か1を入力してください。')
         sys.exit()
 
     if way_of_sort != 0 and way_of_sort != 1:
@@ -210,6 +211,8 @@ else:
     except ValueError:
         print('エラー：数字を入力してください。')
         sys.exit()
+    if (len(ans)==0):
+        print('条件を満たすメニューはありません。')
     for i in range(min(len(ans), num_of_menu)):
         print('')
         for j in range(len(ans[i])):
