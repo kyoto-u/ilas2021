@@ -124,7 +124,7 @@ else:
         for k in range(len(elems)):
             # print(elems[k])
             cur_lis = re.findall(r"[-+]?\d*\.\d+|\d+", str(elems[k]))
-            # メニューの�?数サイズの対�?? 知らんな…
+            # メニューの複数サイズの対応? 知らんな…
             if len(cur_lis) >= 1:
                 cur_dat.append(float(cur_lis[0]))
 
