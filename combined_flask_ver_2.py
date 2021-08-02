@@ -8,9 +8,9 @@ import re
 import sys
 
 try:
-    price_lim = int(input("上限金額を入力してください。 "))
+    price_lim = int(input('上限金額を入力してください。 '))
 except ValueError:
-    print("エラー：数字を入力してください。")
+    print('エラー：数字を入力してください。')
     sys.exit()
 red_target = 27
 green_target = 10
@@ -64,13 +64,13 @@ with io.open('article-url.txt', 'w', encoding='utf-8') as f:
 m_links = [[]for i in range(len(elems))]
 
 try:
-    i = int(input("どの食堂か数字を入力してください。0:中央 1:吉田 2:北部 3:南部 4:ルネ "))
+    i = int(input('どの食堂か数字を入力してください。0:中央 1:吉田 2:北部 3:南部 4:ルネ '))
 except ValueError:
-    print("エラー：1から5の数字を入力してください。")
+    print('エラー：1から5の数字を入力してください。')
     sys.exit()
 
 if i < 0 or i > 4:
-    print("エラー：1から5の数字を入力してください。")
+    print('エラー：1から5の数字を入力してください。')
     sys.exit()
 
 else:
@@ -144,13 +144,13 @@ else:
     menu([], 0, 0, 0, 0, 0)
 
     try:
-        way_of_sort = int(input("金額の昇順で表示する場合は1、降順の場合は0を入力してください。 "))
+        way_of_sort = int(input('金額の昇順で表示する場合は1、降順の場合は0を入力してください。 '))
     except ValueError:
-        print("エラー：1から5の数字を入力してください。")
+        print('エラー：1から5の数字を入力してください。')
         sys.exit()
 
     if way_of_sort != 0 and way_of_sort != 1:
-        print("エラー：0か1を入力してください。")
+        print('エラー：0か1を入力してください。')
         sys.exit()
     elif way_of_sort == 1:
         ans = sorted(ans, key=lambda x: x[-1])
@@ -158,12 +158,17 @@ else:
         ans = sorted(ans, reverse=True, key=lambda x: x[-1])
 
     try:
-        num_of_menu = int(input("表示するメニュー数を入力してください。 "))
+        num_of_menu = int(input('表示するメニュー数を入力してください。 '))
     except ValueError:
-        print("エラー：数字を入力してください。")
+        print('エラー：数字を入力してください。')
         sys.exit()
     for i in range(min(len(ans), num_of_menu)):
-        print(ans[i])
+        print('')
+        for j in range(len(ans[i])):
+            if j == len(ans[i]) - 1:
+                print('合計金額：' + str(ans[i][j]) + '円')
+            else:
+                print(ans[i][j])
     # print(text)
     # f = codecs.open(str(i)+'.txt', 'w', encoding='shift_jis')
     # f = codecs.open(str(i)+'.txt', 'w', encoding='utf-8')
