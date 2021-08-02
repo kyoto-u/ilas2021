@@ -153,6 +153,40 @@ else:
         # text = text + ' '.join(str(cur_dat))
         # text = text + '\n'
 
+    name.append('ライスSS(Boiled rice SS)')
+    price.append(73)
+    red.append(0)
+    green.append(0)
+    yellow.append(21)
+
+    name.append('ライスS(Boiled rice S)')
+    price.append(94)
+    red.append(0)
+    green.append(0)
+    yellow.append(36)
+
+    name.append('ライスL(Boiled rice L)')
+    price.append(136)
+    red.append(0)
+    green.append(0)
+    yellow.append(66)
+
+    name.append('ライスLL(Boiled rice LL)')
+    price.append(181)
+    red.append(0)
+    green.append(0)
+    yellow.append(98)
+
+    n += 4
+
+    if i != 1 or i != 3:
+        name.append('ライスM(Boiled rice M)')
+        price.append(115)
+        red.append(0)
+        green.append(0)
+        yellow.append(51)
+        n += 1
+
     ans = []
 
     menu([], 0, 0, 0, 0, 0)
