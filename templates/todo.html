@@ -1,0 +1,32 @@
+{% extends "_base.html" %}
+{% block bodycontent%}
+<h1>Todo</h1>
+<table>
+<tr>
+<th class="id">id</th><th>title</th><th class="date">limit_at</th><th/>
+</tr>
+<form action="/todo" method="POST">
+  <input type="hidden" name="_method" value="POST"/>
+<tr>
+  <td>-</td>
+  <td><input type="text" name="title" siz="80"/></td>
+  <td><input type="date" name="limit_at"/></td>
+  <td><input type="submit" value="Add"/></td>
+</tr>
+</form>
+{% for todo in table.all() %}
+<tr>
+<td>{% print(todo.id) %}</td>
+<td>{% print(todo.title) %}</td>
+<td>{% print(todo.limit_at) %}</td>
+<td>
+<form action="/todo" method="POST">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <input type="hidden" name="table_id" value="{{ todo.id }}"/>
+    <input type="submit" value="Delete"/>
+</form>
+</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock%}
