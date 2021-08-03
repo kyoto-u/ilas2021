@@ -13,7 +13,12 @@ def todo_imp(message, title, limit_at):
   todo_table = TodoDB()
   todo_table.imp(title, limit_at)
   message.reply(get_todo_list())
-  
+
+@respond_to(r'^\s*todo:\s+hw\s+(\S+)\s+(\S+)')
+def todo_hw(message, title, limit_at):
+  todo_table = TodoDB()
+  todo_table.hw(title, limit_at)
+  message.reply(get_todo_list())
 
 @respond_to(r'^\s*todo:\s+delete\s+(\d+)')
 def todo_delete(message, todo_id):
@@ -30,7 +35,7 @@ def get_todo_list():
   todo_list = todo_table.all()
   msg = ""
   for item in todo_list:
-    msg += f"{item['id']}: {item['title']}: {item['limit_at']}: {item['importance']}\n"
+    msg += f"{item['id']}: {item['title']}: {item['limit_at']}: {item['mark']}\n"
   return msg
 
 @respond_to(r'^\s*todo:\s+day\s+(\S+)')
