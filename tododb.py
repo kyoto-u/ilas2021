@@ -12,7 +12,11 @@ class TodoDB(object):
 
   def imp(self, title, limit_at):
     updated_at = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    self.table.insert({"title": title, "importance": 10, "limit_at": limit_at, "updated_at": updated_at})
+    self.table.insert({"title": title, "importance": 10, "mark":chr(int("10071")), "limit_at": limit_at, "updated_at": updated_at})
+
+  def hw(self, title, limit_at):
+    updated_at = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    self.table.insert({"title": title, "importance": 15, "mark":chr(int("128221")), "limit_at": limit_at, "updated_at": updated_at})
 
   def update(self, todo_id, title = None, limit_at = None):
     updated_at = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -39,4 +43,3 @@ class TodoDB(object):
 
   def delete(self, todo_id):
     self.table.delete(id=todo_id)
-
